@@ -2,8 +2,12 @@
 	<PropertyGroup>
 		<TargetFrameworks>net462;net47;netstandard2.0;netstandard2.1;netcoreapp3.1;net6.0</TargetFrameworks>
 		<Title>Xbim Common</Title>
-		<Description>Provides support for the Xbim commonly used behaviours and interfaces.</Description>
+		<Description>Provides
+			support for the Xbim commonly used behaviours and interfaces.</Description>
+		<RepositoryUrl>https://github.com/novorender/novorender-backend</RepositoryUrl>
+		<Version>5.2.11</Version>
 	</PropertyGroup>
+
 	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0' ">
 		<PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
@@ -12,7 +16,8 @@
 		<PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.3" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.3" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'net47' OR '$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netstandard2.1'">
+	<ItemGroup
+		Condition="'$(TargetFramework)' == 'net47' OR '$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netstandard2.1'">
 		<PackageReference Include="Microsoft.Extensions.Logging" Version="2.1.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.1.1" />
 	</ItemGroup>

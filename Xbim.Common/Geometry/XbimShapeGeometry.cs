@@ -21,7 +21,7 @@ namespace Xbim.Common.Geometry
         /// <summary>
         /// The number of references to this shape geoemetry
         /// </summary>
-        readonly  int _referenceCount;
+        readonly int _referenceCount;
 
         public XbimShapeGeometryHandle(short contextHandle, int shapeLabel, int referenceCount)
         {
@@ -171,6 +171,59 @@ namespace Xbim.Common.Geometry
         byte[] _shapeData;
 
 
+        //Novorender Extension
+        string _brep;
+
+        public string Brep
+        {
+            get
+            {
+                return _brep;
+            }
+            set
+            {
+                _brep = value;
+            }
+        }
+
+        double _offsetX;
+        public double OffsetX
+        {
+            get
+            {
+                return _offsetX;
+            }
+            set
+            {
+                _offsetX = value;
+            }
+        }
+
+        double _offsetY;
+        public double OffsetY
+        {
+            get
+            {
+                return _offsetY;
+            }
+            set
+            {
+                _offsetY = value;
+            }
+        }
+
+        double _offsetZ;
+        public double OffsetZ
+        {
+            get
+            {
+                return _offsetZ;
+            }
+            set
+            {
+                _offsetZ = value;
+            }
+        }
 
         /// <summary>
         /// The unique label of this shape geometry
@@ -214,7 +267,7 @@ namespace Xbim.Common.Geometry
                 _geometryHash = value;
             }
         }
-        
+
         /// <summary>
         /// The cost in bytes of this shape
         /// </summary>
@@ -222,7 +275,7 @@ namespace Xbim.Common.Geometry
         {
             get
             {
-                if(_referenceCount==0)
+                if (_referenceCount == 0)
                     return _shapeData.Length;
                 return _referenceCount * _shapeData.Length;
             }
@@ -523,7 +576,7 @@ namespace Xbim.Common.Geometry
                         {
                             var u = _array[normalOffset + (j * indexSpan)];
                             var v = _array[normalOffset + (j * indexSpan) + 1];
-                            var pn = new XbimPackedNormal(u,v);                           
+                            var pn = new XbimPackedNormal(u, v);
                             yield return pn.Normal;
                         }
                         normalOffset += triangleSpan;
@@ -532,5 +585,5 @@ namespace Xbim.Common.Geometry
             }
         }
     }
-   
+
 }

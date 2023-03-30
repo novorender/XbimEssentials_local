@@ -40,10 +40,7 @@ namespace Xbim.Tessellator
         {
             return
                 shape is IIfcFaceBasedSurfaceModel ||
-                shape is IIfcShellBasedSurfaceModel ||
-                shape is IIfcConnectedFaceSet ||
-                shape is IIfcTessellatedFaceSet ||
-                shape is IIfcFacetedBrep;
+                shape is IIfcTessellatedFaceSet;
         }
 
         public XbimShapeGeometry Mesh(IIfcRepresentationItem shape)
@@ -462,7 +459,7 @@ namespace Xbim.Tessellator
                 var isLarge = IsLarge(origin.X) || IsLarge(origin.Y) || IsLarge(origin.Z);
 
                 var vertices = isLarge ?
-                    triangulatedMeshes.SelectMany(t => t.Vertices).Select(v => new Vec3(v.X - origin.X, v.Y - origin.Y, v.Z - origin.Z)):
+                    triangulatedMeshes.SelectMany(t => t.Vertices).Select(v => new Vec3(v.X - origin.X, v.Y - origin.Y, v.Z - origin.Z)) :
                     triangulatedMeshes.SelectMany(t => t.Vertices);
                 foreach (var v in vertices)
                 {

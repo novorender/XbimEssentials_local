@@ -3,13 +3,18 @@
     <TargetFrameworks>net47;netstandard2.0</TargetFrameworks>
     <Company>Xbim Ltd.</Company>
     <Title>Xbim IO for ESENT</Title>
-    <Description>Manages Ifc or STEP Models backed by the ESENT database. Windows only.</Description>
+    <Description>Manages Ifc or
+      STEP Models backed by the ESENT database. Windows only.</Description>
+    <RepositoryUrl>https://github.com/novorender/novorender-backend</RepositoryUrl>
+    <Version>5.2.11</Version>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net47|AnyCPU'">
     <NoWarn>CS1572;CS1573;CS1591</NoWarn>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net47|AnyCPU'">
-    <NoWarn>CS1572;CS1573;CS1591</NoWarn>
+  <PropertyGroup
+    Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net47|AnyCPU'">
+    <NoWarn>
+      CS1572;CS1573;CS1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xbim.Common\Xbim.Common.csproj" />
@@ -27,7 +32,7 @@
     <PackageReference Include="Microsoft.Database.ManagedEsent" Version="2.0.3" />
   </ItemGroup>
 
-	<ItemGroup>
-		<None Include="..\xbim-toolkit-icon.png" Pack="True" PackagePath="\" />
-	</ItemGroup>
+  <ItemGroup>
+    <None Include="..\xbim-toolkit-icon.png" Pack="True" PackagePath="\" />
+  </ItemGroup>
 </Project>

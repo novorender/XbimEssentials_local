@@ -3,13 +3,17 @@
   <PropertyGroup>
     <TargetFrameworks>net462;net47;netstandard2.0;netstandard2.1;netcoreapp3.1</TargetFrameworks>
     <Title>Xbim IFC4</Title>
-    <Description>Provides support for the IFC4 schema, including Add1, Add2 + Alignment schemas.</Description>
-    <Product>Xbim Ifc4 Schema</Product>
+    <Description>Provides
+      support for the IFC4 schema, including Add1, Add2 + Alignment schemas.</Description>
+    <Product>Xbim Ifc4
+      Schema</Product>
+    <RepositoryUrl>https://github.com/novorender/novorender-backend</RepositoryUrl>
+    <Version>5.2.11</Version>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xbim.Common\Xbim.Common.csproj" />
   </ItemGroup>
-	<ItemGroup>
-		<None Include="..\xbim-toolkit-icon.png" Pack="True" PackagePath="\" />
-	</ItemGroup>
+  <ItemGroup>
+    <None Include="..\xbim-toolkit-icon.png" Pack="True" PackagePath="\" />
+  </ItemGroup>
 </Project>
